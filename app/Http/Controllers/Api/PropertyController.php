@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Searchy\Property;
+use Searchy\Transformers\PropertyTransformer;
 
 
 /**
@@ -13,16 +15,28 @@ use App\Http\Controllers\Controller;
  * Handles Api calls
  * @package App\Http\Controllers\Api
  */
-class PropertyController extends Controller
+class PropertyController extends ApiController
 {
     /**
-     * Display a listing of the resource.
+     * @var Searchy\Transformers\PropertyTransformer
+     */
+    protected $propertyTransformer;
+
+    function __construct(PropertyTransformer $propertyTransformer) {
+        $this->propertyTransformer = $propertyTransformer;
+    }
+
+    /**
+     * show all Active Programs
      *
-     * @return Response
+     * @return Json Response
      */
     public function index()
     {
-
+        $properties = Property::paginate($this->getLimit());
+        return $this->respondWithPagination($properties,[
+            'data'=>$this->propertyTransformer->transformCollection($properties->all())
+        ]);
     }
 
 
