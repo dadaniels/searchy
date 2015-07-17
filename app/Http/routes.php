@@ -18,5 +18,5 @@ Route::group(['prefix'=>'v1/api'],function() {
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.index');
 });

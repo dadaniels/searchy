@@ -16,7 +16,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
 

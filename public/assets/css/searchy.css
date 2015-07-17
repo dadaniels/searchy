@@ -1,0 +1,10 @@
+body {
+    padding-top: 40px;
+}
+
+.form-group {
+    width: 80% !important;
+}
+#search {
+    width: 100% !important;
+}
