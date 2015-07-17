@@ -11,6 +11,12 @@
 |
 */
 
+// we can add filter on this grouped Route for api routes
+Route::group(['prefix'=>'v1/api'],function() {
+    Route::resource('properties','Api\PropertyController',['only'=>['index','show']]);
+});
+
+
 Route::get('/', function () {
     return view('welcome');
 });
