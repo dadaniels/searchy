@@ -35,7 +35,7 @@ class PropertyController extends ApiController
     public function index()
     {
         $properties = Property::searchProperties(\Input::all(),$this->getLimit());
-        return $this->respondWithPagination($properties,[
+        return $this->respond([
             'data'=>$this->propertyTransformer->transformCollection($properties->all())
         ]);
     }

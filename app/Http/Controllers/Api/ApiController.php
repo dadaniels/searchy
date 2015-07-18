@@ -65,49 +65,4 @@ class ApiController extends Controller {
     public function respond($data,$headers = []) {
         return Response::json($data,$this->getStatusCode(),$headers);
     }
-
-    /**
-     * Return 404 error code with Custom error Message
-     * @param string $message
-     * @return mixed
-     */
-    public function respondNotFound($message = 'Not Found!') {
-        return $this->setStatusCode(404)->respondWithError($message);
-    }
-
-
-    /**
-     * @param $collection
-     * @param $data
-     * @return mixed
-     */
-    public function respondWithPagination($collection,$data) {
-        $data = array_merge($data,[
-            'paginate'    => [
-                'total_count'   => $collection->total(),
-                'total_pages'   => ceil($collection->total() /  $collection->perPage()),
-                'current_page'   => $collection->currentPage(),
-                'limit' => $collection->perPage()
-            ]
-        ]);
-        return $this->respond($data);
-    }
-
-
-
-    /**
-     * respondWithError like 404,403 etc
-     * @param string $message
-     * @return mixed
-     */
-    public function respondWithError($message = 'Not Found!') {
-        return $this->respond([
-            'error' => [
-                'message'   => $message,
-                'status_code'   => $this->getStatusCode()
-            ]
-        ]);
-    }
-
-
 }

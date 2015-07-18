@@ -5,7 +5,7 @@
  */
 function search(url) {
     jQuery('#properties').html('');
-    property_tpl = Handlebars.compile(jQuery('#property_tpl').html());
+    var property_tpl = Handlebars.compile(jQuery('#property_tpl').html());
     jQuery('#quick-loader').show();
     // Request the data
     jQuery.ajax({
@@ -27,5 +27,10 @@ function search(url) {
 
 jQuery(document).ready(function(){
     search('v1/api/properties');
-
+    jQuery('#search-form').on('submit',function(e) {
+        var filters = jQuery(this).serialize();
+        console.log(filters);
+        //search('v1/api/properties?'+filters);
+        e.preventDefault();
+    })
 });

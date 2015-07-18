@@ -10,11 +10,40 @@
             <div class="jumbotron">
               <h1>Hello from Searchy!</h1>
               <p>Available Search for Now is Property Search...</p>
-                 <form class="form-inline">
-                   <div class="form-group">
-                     <input type="text" class="form-control input-lg" id="search" placeholder="the veranda...">
+                 <form class="form-inline" id="search-form" method="POST">
+                   <div class="form-group custom-form-group">
+                     <input type="text" class="form-control input-lg" name="name" id="search" placeholder="the veranda...">
                    </div>
+
                    <button type="submit" id="search-btn" class="btn btn-lg btn-success">Search</button>
+
+                 <a role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                   Advance Filter
+                 </a>
+
+                 <div class="collapse" id="collapseExample">
+                   <div class="well form-inline">
+                        <div class="form-group">
+                            <input type="email" class="form-control input-sm" name="bedrooms" placeholder="number of bedrooms...">
+                        </div>
+                         <div class="form-group">
+                            <input type="email" class="form-control input-sm" name="bathrooms" placeholder="number of bathrooms...">
+                        </div>
+                         <div class="form-group">
+                            <input type="email" class="form-control input-sm" name="storeys" placeholder="number of storeys...">
+                        </div>
+                         <div class="form-group">
+                            <input type="email" class="form-control input-sm" name="garages" placeholder="number of garages...">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control input-sm" name="lower_price" placeholder="lower price...">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control input-sm" name="higher_price" placeholder="higher price...">
+                        </div>
+                   </div>
+                 </div>
+
                    <img src="assets/images/ajax-loader-black.gif" id="quick-loader" alt=""/>
                  </form>
             </div>

@@ -2,7 +2,7 @@
 
     <tr id="athlete_{{id}}">
         <td>{{property}}</td>
-        <td>{{price}}</td>
+        <td>${{price}}</td>
         <td>{{bedrooms}}</td>
         <td>{{bathrooms}}</td>
         <td>{{storeys}}</td>

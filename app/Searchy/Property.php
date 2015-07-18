@@ -15,7 +15,7 @@ class Property extends \Eloquent {
         'bedrooms' => 'bedrooms|=',
         'bathrooms' => 'bathrooms|=',
         'storeys' => 'storeys|=',
-        'garages' => 'garges|=',
+        'garages' => 'garages|=',
         'lower_price'=>'price|>=',
         'higher_price'=>'price|<='
     );
