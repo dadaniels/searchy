@@ -21,19 +21,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        return view('page.index');
+        return view('pages.index');
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
 }
