@@ -16,7 +16,5 @@ Route::group(['prefix'=>'v1/api'],function() {
     Route::resource('properties','Api\PropertyController',['only'=>['index','show']]);
 });
 
-
-Route::get('/', function () {
-    return view('pages.index');
-});
+// Page route
+Route::get('/', 'PropertyController@index');

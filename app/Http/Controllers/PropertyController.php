@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+/**
+ * Regular Route/ Normal Page Controller
+ * Class PropertyController
+ * @package App\Http\Controllers
+ */
 class PropertyController extends Controller
 {
     /**
@@ -16,7 +21,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-
+        return view('page.index');
     }
 
 

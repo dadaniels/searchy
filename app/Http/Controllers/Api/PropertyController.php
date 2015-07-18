@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -33,7 +34,7 @@ class PropertyController extends ApiController
      */
     public function index()
     {
-        $properties = Property::paginate($this->getLimit());
+        $properties = Property::searchProperties(\Input::all(),$this->getLimit());
         return $this->respondWithPagination($properties,[
             'data'=>$this->propertyTransformer->transformCollection($properties->all())
         ]);

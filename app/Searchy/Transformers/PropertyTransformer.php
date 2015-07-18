@@ -12,7 +12,7 @@ class PropertyTransformer extends Transformer {
     public function transform($property) {
         return [
             'id' => $property['id'],
-            'name' => $property['name'],
+            'property' => $property['name'], // so we can change field name, this will help us in the future in case we decided to rename tbl field
             'price' => $property['price'],
             'bedrooms' => $property['bedrooms'],
             'bathrooms' => $property['bathrooms'],
