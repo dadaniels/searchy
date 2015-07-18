@@ -28,13 +28,13 @@
             <input type="text" class="form-control input-sm" name="garages" id="garages" placeholder="2">
         </div>
         <div class="form-group">
-            <label for="lower_price" class="control-label">lower price:</label>
-            <input type="text" class="form-control input-sm" name="lower_price" id="lower_price" placeholder="100000">
-        </div>
+            <label for="lower_price" class="control-label">price range:</label>
+            <div class="form-inline">
+                <input type="text" class="price-range form-control input-sm" name="lower_price" id="lower_price" placeholder="100000"> -
+                <input type="text" class="price-range form-control input-sm" name="higher_price" id="higher_price" placeholder="500000">
+            </div>
 
-        <div class="form-group">
-            <label for="higher_price" class="control-label">higher_price:</label>
-            <input type="text" class="form-control input-sm" name="higher_price" id="higher_price" placeholder="500000">
+
         </div>
 
         </div>

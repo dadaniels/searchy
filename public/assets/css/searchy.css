@@ -12,3 +12,7 @@ body {
 .search-controls a {
     margin-left: 15px;
 }
+
+.price-range {
+    width: 45% !important;
+}
