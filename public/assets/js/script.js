@@ -29,8 +29,7 @@ jQuery(document).ready(function(){
     search('v1/api/properties');
     jQuery('#search-form').on('submit',function(e) {
         var filters = jQuery(this).serialize();
-        console.log(filters);
-        //search('v1/api/properties?'+filters);
+        search('v1/api/properties?'+filters);
         e.preventDefault();
     })
 });

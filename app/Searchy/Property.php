@@ -33,7 +33,7 @@ class Property extends \Eloquent {
        $filters = self::$search_filters;
        foreach($filters as $key => $field) {
            $field = explode('|',$field);
-           if(isset($inputs[$key])) {
+           if(isset($inputs[$key]) && $inputs[$key] != '') {
                $query->where($field[0],$field[1],$inputs[$key]);
            }
        }
